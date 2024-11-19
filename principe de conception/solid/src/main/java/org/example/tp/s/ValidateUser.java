@@ -29,12 +29,12 @@ Note : Pour l'enregistrement et la connexion, nous n'utiliserons aucun stockage 
 
 public class ValidateUser {
 
-    public boolean validateUsername(User user) {
+    public static boolean validateUsername(User user) {
         // Valider le nom d'utilisateur (ex: longueur, caractères autorisés)
         return user.getUsername().length() >= 5 && user.getUsername().matches("[a-zA-Z_0-9]+");
     }
 
-    public boolean validatePassword(User user) {
+    public static boolean validatePassword(User user) {
         // Valider le mot de passe (ex: longueur, complexité)
         return user.getPassword().length() >= 8 && user.getPassword().matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$");
     }

@@ -1,5 +1,7 @@
 package org.example.creational.builder.tpModularCars;
 
+import java.io.Serializable;
+
 public class Car {
     // attributs obligatoire
     private Model model;
@@ -22,6 +24,31 @@ public class Car {
         this.seats = carBuilder.seats;
         this.isGPSEnable = carBuilder.isGPSEnable;
         this.isRoofOpen = carBuilder.isRoofOpen;
+    }
+
+
+    public Model getModel() {
+        return model;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public int getSeats() {
+        return seats;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public boolean isGPSEnable() {
+        return isGPSEnable;
+    }
+
+    public boolean isRoofOpen() {
+        return isRoofOpen;
     }
 
     @Override
@@ -51,8 +78,8 @@ public class Car {
 
         public CarBuilder(Model model, Engine engine, int seats){
             this.model = model;
-            this.engine = engine;
-            this.seats = seats;
+            setEngine(engine);
+            setSeats(seats);
         }
 
 
@@ -69,6 +96,20 @@ public class Car {
         public CarBuilder isRoofOpen (boolean isRoofOpen){
             this.isRoofOpen = isRoofOpen;
             return this;
+        }
+
+        public void setEngine(Engine engine) {
+            if(this.model.equals(Model.Sport) && engine.equals(Engine.Electrique)){
+                throw new IllegalArgumentException("Violation contrainte 3");
+            }
+            this.engine = engine;
+        }
+
+        public void setSeats(int seats) {
+            if(this.model.equals(Model.SUV) && seats<5){
+                throw new IllegalArgumentException("Violation contrainte 4");
+            }
+            this.seats = seats;
         }
 
         public Car build(){

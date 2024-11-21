@@ -13,20 +13,25 @@ public class Main {
         warrior.getNameCharacter();
         warrior.getAttack();
         warrior.getHealth();
+        warrior.useSpecialSkill();
 
         mage.getNameCharacter();
         mage.getAttack();
         mage.getHealth();
+        mage.useSpecialSkill();
 
         archer.getNameCharacter();
         archer.getAttack();
         archer.getHealth();
+        archer.useSpecialSkill();
 
         Character voleur = characterFactory.getCharacter("voleur", "voleurTest", 4,5);
 
         voleur.getNameCharacter();
         voleur.getAttack();
         voleur.getHealth();
+        voleur.useSpecialSkill();
+
 
 
     }

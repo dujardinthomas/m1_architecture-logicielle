@@ -2,6 +2,7 @@ package org.example.creational.factory.tp;
 
 public abstract class Character {
 
+    //tout ce qui suit est commun a tout les character
     private String name;
     private int health;
     private int attack;
@@ -37,7 +38,6 @@ public abstract class Character {
         this.attack = attack;
     }
 
-    public String useSpecialSkill(){
-        return "special skills ??";
-    }
+    //méthode propre a chaque enfant
+    public abstract void useSpecialSkill();
 }

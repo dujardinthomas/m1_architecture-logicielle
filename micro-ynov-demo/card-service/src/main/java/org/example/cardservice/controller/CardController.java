@@ -24,7 +24,7 @@ public class CardController {
         return cardService.getCardById(id);
     }
 
-    @GetMapping("/accounts/{accountId}")
+    @GetMapping("/byAccount/{accountId}")
     public List<Card> getCardsByAccountId(@PathVariable Long accountId) {
         return cardService.getCardsByAccountId(accountId);
     }

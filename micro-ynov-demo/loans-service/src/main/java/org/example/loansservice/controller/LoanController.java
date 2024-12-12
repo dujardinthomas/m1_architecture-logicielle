@@ -23,7 +23,7 @@ public class LoanController {
         return loanService.getLoanById(id);
     }
 
-    @GetMapping("/accounts/{accountId}")
+    @GetMapping("/byAccount/{accountId}")
     public List<Loan> getLoansByAccountId(@PathVariable Long accountId) {
         return loanService.getLoansByAccountId(accountId);
     }

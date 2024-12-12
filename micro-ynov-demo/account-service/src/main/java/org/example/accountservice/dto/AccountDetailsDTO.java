@@ -1,23 +1,19 @@
-package org.example.accountservice.entity;
+package org.example.accountservice.dto;
 
+import lombok.Getter;
+import lombok.Setter;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.util.List;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
-@Table(name = "accounts")
-public class Account {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Setter
+@Getter
+public class AccountDetailsDTO {
     private Long id;
     private String name;
     private String email;
     private Integer solde;
+    private List<CardDTO> cards;
+    private List<LoanDTO> loans;
 
     public Long getId() {
         return id;
@@ -50,4 +46,21 @@ public class Account {
     public void setSolde(Integer solde) {
         this.solde = solde;
     }
+
+    public List<CardDTO> getCards() {
+        return cards;
+    }
+
+    public void setCards(List<CardDTO> cards) {
+        this.cards = cards;
+    }
+
+    public List<LoanDTO> getLoans() {
+        return loans;
+    }
+
+    public void setLoans(List<LoanDTO> loans) {
+        this.loans = loans;
+    }
 }
+

@@ -1,0 +1,1 @@
+insert into accounts (name, email, solde) values ('thomas', 'toto@gmail.com', 1500);

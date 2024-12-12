@@ -1,0 +1,1 @@
+insert into card (card_number, card_type, account_id) values ('1234567890123456', 'VISA', 1);

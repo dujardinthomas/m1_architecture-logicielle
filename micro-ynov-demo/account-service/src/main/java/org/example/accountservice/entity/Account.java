@@ -16,41 +16,41 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public String getName() {
-        return name;
-    }
+    private String name;
+    private String email;
+    private Integer solde;
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getName() {
+        return name;
     }
 
     public String getEmail() {
         return email;
     }
 
+    public Integer getSolde() {
+        return solde;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public Integer getSolde() {
-        return Solde;
-    }
-
     public void setSolde(Integer solde) {
-        Solde = solde;
+        this.solde = solde;
     }
-
-    private String name;
-    private String email;
-    private Integer Solde;
-
 
 }

@@ -17,6 +17,26 @@ public class Card {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String cardNumber;
+    private String cardType; // Debit, Credit, etc.
+    private Long accountId; // Relation avec l'Account
+
+    public Long getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(Long accountId) {
+        this.accountId = accountId;
+    }
+
+    public String getCardType() {
+        return cardType;
+    }
+
+    public void setCardType(String cardType) {
+        this.cardType = cardType;
+    }
+
     public String getCardNumber() {
         return cardNumber;
     }
@@ -32,27 +52,5 @@ public class Card {
     public void setId(Long id) {
         this.id = id;
     }
-
-    public String getCardType() {
-        return cardType;
-    }
-
-    public void setCardType(String cardType) {
-        this.cardType = cardType;
-    }
-
-    public Long getAccountId() {
-        return accountId;
-    }
-
-    public void setAccountId(Long accountId) {
-        this.accountId = accountId;
-    }
-
-    private String cardNumber;
-    private String cardType; // Debit, Credit, etc.
-    private Long accountId; // Relation avec l'Account
-
-
 
 }
